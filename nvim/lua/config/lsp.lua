@@ -6,6 +6,7 @@ lsp.servers = {
 	'dockerls',
 	'gopls',
 	'helm_ls',
+	'jsonls',
 	'lua_ls',
 	'marksman',
 	'terraformls',
