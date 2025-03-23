@@ -1,0 +1,7 @@
+/fish/completions/asdf.fish
+/fish/config.local.fish
+/fish/fish_variables
+/lazygit/state.yml
+/nvim/plugin/packer_compiled.lua
+/nvim/lazy-lock.json
+/.theme
