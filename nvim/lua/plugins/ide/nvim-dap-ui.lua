@@ -1,6 +1,6 @@
 return {
 	'rcarriga/nvim-dap-ui',
-	tag = 'v3.9.3',
+	tag = 'v4.0.0',
 	event = 'VeryLazy',
 	opts = {
 		layouts = {
