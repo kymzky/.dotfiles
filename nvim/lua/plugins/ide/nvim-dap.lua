@@ -1,7 +1,7 @@
 local dap_config = require('config.dap')
 return {
 	'mfussenegger/nvim-dap',
-	tag = '0.9.0',
+	tag = '0.10.0',
 	event = 'VeryLazy',
 	config = function()
 		local dap = require('dap')
