@@ -44,6 +44,11 @@ vim.keymap.set('n', '<Leader>sr', function()
 	})
 end, { desc = 'grug-far search and replace' })
 
+-- Kulala
+vim.keymap.set('n', '<Leader>k', function()
+	require('kulala').run()
+end, { desc = 'Kuala run' })
+
 -- Lazygit
 local function open_lazygit()
 	if vim.env.TMUX ~= nil then
