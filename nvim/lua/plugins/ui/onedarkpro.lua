@@ -1,6 +1,6 @@
 return {
 	'olimorris/onedarkpro.nvim',
-	tag = 'v2.11.0',
+	tag = 'v2.12.0',
 	event = 'VeryLazy',
 	config = function()
 		require('onedarkpro').setup({
