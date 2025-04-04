@@ -1,6 +1,6 @@
 return {
 	'rcarriga/nvim-dap-ui',
-	tag = 'v3.9.3',
+	commit = 'bc81f8d',
 	event = 'VeryLazy',
 	opts = {
 		layouts = {
