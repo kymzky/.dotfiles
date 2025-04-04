@@ -28,6 +28,15 @@ api.nvim_create_autocmd({ 'BufEnter' }, {
 	end,
 })
 
+api.nvim_create_autocmd('FileType', {
+	group = augroup('java'),
+	pattern = 'java',
+	callback = function()
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.tabstop = 4
+	end,
+})
+
 api.nvim_create_autocmd('BufEnter', {
 	group = augroup('helm'),
 	pattern = { '*.yaml', '*.yml' },

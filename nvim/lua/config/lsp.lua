@@ -4,6 +4,7 @@ lsp.servers = {
 	'ansiblels',
 	'bashls',
 	'dockerls',
+	'jdtls',
 	'gopls',
 	'helm_ls',
 	'jsonls',
@@ -27,6 +28,7 @@ lsp.linters_by_ft = {
 }
 
 lsp.formatters_by_ft = {
+	http = { 'kulala-fmt' },
 	lua = { 'stylua' },
 	markdown = { 'prettier' },
 }
