@@ -1,3 +1,7 @@
+vim.diagnostic.config({
+	virtual_text = true,
+})
+
 local g = vim.g
 g.autoformat = true
 g.mapleader = ' '
