@@ -50,8 +50,12 @@ if status is-interactive
     alias k='kubectl'
     alias lg='lazygit'
     alias m='multipass'
-    alias t='go-task'
-    alias tl='t --list'
+    if command -q go-task
+        alias task='go-task'
+        alias t='task'
+        alias tl='t --list'
+        task --completion fish | source
+    end
     alias vim='nvim'
 
     # Git repositories
