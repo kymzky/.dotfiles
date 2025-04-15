@@ -1,5 +1,5 @@
 return {
 	'mistweaverco/kulala.nvim',
-	tag = 'v5.1.0',
+	tag = 'v5.2.1',
 	opts = {},
 }
