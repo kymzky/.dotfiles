@@ -1,6 +1,6 @@
 return {
 	'olimorris/codecompanion.nvim',
-	tag = 'v14.13.0',
+	tag = 'v17.8.0',
 	event = 'VeryLazy',
 	config = true,
 	opts = {
