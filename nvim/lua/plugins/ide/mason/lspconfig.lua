@@ -1,7 +1,7 @@
 local lsp_config = require('config.lsp')
 return {
 	'williamboman/mason-lspconfig.nvim',
-	tag = 'v1.32.0',
+	tag = 'v2.0.0',
 	event = 'BufReadPre',
 	config = function()
 		require('mason-lspconfig').setup({
