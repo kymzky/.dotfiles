@@ -1,6 +1,6 @@
 return {
 	'mikavilpas/yazi.nvim',
-	tag = 'v11.6.2',
+	tag = 'v11.7.0',
 	event = 'VeryLazy',
 	opts = {
 		open_for_directories = true,
