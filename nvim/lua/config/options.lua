@@ -30,7 +30,8 @@ opt.laststatus = 3 -- enable global statusline
 opt.linebreak = true
 opt.number = true
 opt.relativenumber = true
-opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+opt.sessionoptions =
+	{ 'buffers', 'curdir', 'folds', 'globals', 'help', 'localoptions', 'skiprtp', 'tabpages', 'winsize' }
 opt.shiftround = true
 opt.shiftwidth = 2
 opt.signcolumn = 'yes'
