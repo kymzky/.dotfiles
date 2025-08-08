@@ -7,6 +7,10 @@ g.autoformat = true
 g.mapleader = ' '
 g.maplocalleader = '\\'
 g.markdown_recommended_style = 0 -- fix markdown indentation settings
+g.netrw_banner = 0
+g.netrw_localcopydircmd = 'cp -r'
+g.netrw_keepdir = 0
+g.netrw_winsize = 20
 
 local opt = vim.opt
 opt.autowrite = true

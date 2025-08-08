@@ -68,6 +68,10 @@ vim.keymap.set('n', 'gr', function()
 	})
 end, { desc = 'Find references' })
 
+-- Netrw
+vim.keymap.set('n', '<Leader>e', '<Cmd>Lexplore<CR>')
+vim.keymap.set('n', '<Leader>E', '<Cmd>Lexplore %:p:h<CR>')
+
 -- nvim-dap
 vim.keymap.set('n', '<Leader>db', function()
 	require('dap').toggle_breakpoint()
@@ -120,10 +124,6 @@ vim.keymap.set('n', '<Leader>sk', '<Cmd>Telescope keymaps<CR>', { desc = 'Telesc
 vim.keymap.set('n', '<Leader>sw', function()
 	require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })
 end, { desc = 'Telescope grep current word' })
-
--- Yazi
-vim.keymap.set('n', '<Leader>e', '<Cmd>Yazi<CR>')
-vim.keymap.set('n', '<Leader>E', '<Cmd>Yazi cwd<CR>')
 
 -- Visual selection
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down', silent = true })

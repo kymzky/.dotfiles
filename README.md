@@ -11,7 +11,6 @@ public for potential inspiration (may get more detailed documentation in the fut
 - [LSD](https://github.com/lsd-rs/lsd)
 - [Neovim](https://neovim.io/)
 - [tmux](https://github.com/tmux/tmux)
-- [Yazi](https://yazi-rs.github.io/)
 
 ## Installation
 
