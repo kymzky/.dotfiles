@@ -35,11 +35,12 @@
             pkgs.man
             pkgs.ncurses
             pkgs.neovim
-            pkgs.openssh
+            pkgs.openssh_gssapi
             pkgs.python314
             pkgs.ripgrep
             pkgs.shadow
             pkgs.starship
+            pkgs.sudo
             pkgs.tmux
             pkgs.unzip
             pkgs.wget
@@ -67,16 +68,17 @@
               set -ga PATH ${pkgs.man}/bin
               set -ga PATH ${pkgs.ncurses}/bin
               set -ga PATH ${pkgs.neovim}/bin
-              set -ga PATH ${pkgs.openssh}/bin
+              set -ga PATH ${pkgs.openssh_gssapi}/bin
               set -ga PATH ${pkgs.python314}/bin
               set -ga PATH ${pkgs.ripgrep}/bin
               set -ga PATH ${pkgs.shadow}/bin
               set -ga PATH ${pkgs.starship}/bin
+              set -ga PATH ${pkgs.sudo}/bin
               set -ga PATH ${pkgs.tmux}/bin
               set -ga PATH ${pkgs.unzip}/bin
               set -ga PATH ${pkgs.wget}/bin
               set -ga PATH ${pkgs.which}/bin
-              set -ga PATH $EXTRA_PATHS
+              $EXTRA_COMMANDS
               export PATH
             "
           '';
