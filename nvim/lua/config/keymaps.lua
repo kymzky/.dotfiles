@@ -22,6 +22,19 @@ vim.keymap.set({ 'n' }, '<Leader>cc', '<Cmd>CodeCompanionChat Toggle<CR>', { nor
 -- fidget
 vim.keymap.set('n', '<Leader>n', '<Cmd>Fidget history<CR>', { desc = 'Show notification history' })
 
+-- fzf-lua
+vim.keymap.set('n', '<Leader><Leader>', '<Cmd>FzfLua files<CR>', { desc = 'Search files' })
+vim.keymap.set('n', '<Leader>/', '<Cmd>FzfLua live_grep<CR>', { desc = 'FzfLua live_grep' })
+vim.keymap.set('n', '<Leader>,', '<Cmd>FzfLua buffers<CR>', { desc = 'Search buffers' })
+vim.keymap.set('n', '<Leader>ca', '<Cmd>FzfLua lsp_code_actions<CR>', { desc = 'Code actions' })
+vim.keymap.set('n', '<Leader>gh', '<Cmd>FzfLua git_bcommits<CR>', { desc = 'Git history' })
+vim.keymap.set('n', '<Leader>sc', '<Cmd>FzfLua command_history<CR>', { desc = 'Search command history' })
+vim.keymap.set('n', '<Leader>sC', '<Cmd>FzfLua commands<CR>', { desc = 'Search commands' })
+vim.keymap.set('n', '<Leader>sd', '<Cmd>FzfLua diagnostics_workspace<CR>', { desc = 'Search diagnostics' })
+vim.keymap.set('n', '<Leader>sk', '<Cmd>FzfLua keymaps<CR>', { desc = 'Search keymaps' })
+vim.keymap.set('n', '<Leader>sw', '<Cmd>FzfLua grep_cword<CR>', { desc = 'Search word' })
+vim.keymap.set('n', 'gr', '<Cmd>FzfLua lsp_references<CR>', { desc = 'Go to references' })
+
 -- gitsigns
 vim.keymap.set('n', '<Leader>h', function()
 	package.loaded.gitsigns.nav_hunk('next')
@@ -57,16 +70,10 @@ vim.keymap.set('n', '<Leader>gg', open_lazygit, {
 })
 
 -- LSP
-vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, { desc = 'Code Actions' })
-vim.keymap.set({ 'n', 'v' }, '<Leader>cr', vim.lsp.buf.rename, { desc = 'Code Actions' })
+vim.keymap.set({ 'n', 'v' }, '<Leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
 vim.keymap.set('n', '<Leader>d', vim.diagnostic.goto_next, { desc = 'Diagnostic go to next' })
 vim.keymap.set('n', '<Leader>D', vim.diagnostic.goto_prev, { desc = 'Diagnostic go to previous' })
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-vim.keymap.set('n', 'gr', function()
-	require('telescope.builtin').lsp_references({
-		include_declaration = false,
-	})
-end, { desc = 'Find references' })
 
 -- Netrw
 vim.keymap.set('n', '<Leader>e', '<Cmd>Lexplore<CR>')
@@ -105,25 +112,6 @@ vim.keymap.set('n', '<Leader>p', function()
 	vim.b.filename_toggle = not vim.b.filename_toggle
 	vim.cmd('redrawstatus')
 end, { desc = 'Toggle filename/path display in statusline' })
-
--- Telescope
-vim.keymap.set('n', '<Leader><Leader>', '<Cmd>Telescope find_files<CR>', { desc = 'Telescope find_files' })
-vim.keymap.set('n', '<Leader>,', '<Cmd>Telescope buffers<CR>', { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<Leader>/', '<Cmd>Telescope live_grep<CR>', { desc = 'Telescope live_grep' })
-vim.keymap.set(
-	'n',
-	'<Leader>gh',
-	'<Cmd>Telescope git_bcommits<CR>',
-	{ desc = 'Telescope git history for current buffer' }
-)
-vim.keymap.set('n', '<Leader>sc', '<Cmd>Telescope commands<CR>', { desc = 'Telescope commands' })
-vim.keymap.set('n', '<Leader>sC', '<Cmd>Telescope command_history<CR>', { desc = 'Telescope command_history' })
-vim.keymap.set('n', '<Leader>sd', '<Cmd>Telescope diagnostics<CR>', { desc = 'Telescope diagnostics' })
-vim.keymap.set('n', '<Leader>sh', '<Cmd>Telescope help_tags<CR>', { desc = 'Telescope help_tags' })
-vim.keymap.set('n', '<Leader>sk', '<Cmd>Telescope keymaps<CR>', { desc = 'Telescope keymaps' })
-vim.keymap.set('n', '<Leader>sw', function()
-	require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })
-end, { desc = 'Telescope grep current word' })
 
 -- Visual selection
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down', silent = true })
