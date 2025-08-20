@@ -3,6 +3,7 @@ return {
 	tag = 'v3.9.0',
 	main = 'ibl',
 	---@module "ibl"
+	event = 'BufReadPost',
 	opts = {},
 	config = function()
 		local highlight = {

@@ -57,6 +57,9 @@ vim.keymap.set('n', '<Leader>sr', function()
 	})
 end, { desc = 'grug-far search and replace' })
 
+-- Lazy
+vim.keymap.set('n', '<Leader>l', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
+
 -- Lazygit
 local function open_lazygit()
 	if vim.env.TMUX ~= nil then
