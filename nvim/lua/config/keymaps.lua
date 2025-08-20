@@ -16,9 +16,6 @@ end, { desc = 'Buffer delete', silent = true })
 vim.keymap.set('n', 'H', ':bprevious<CR>', { desc = 'Buffer previous', silent = true })
 vim.keymap.set('n', 'L', ':bnext<CR>', { desc = 'Buffer next', silent = true })
 
--- CodeCompanion
-vim.keymap.set({ 'n' }, '<Leader>cc', '<Cmd>CodeCompanionChat Toggle<CR>', { noremap = true, silent = true })
-
 -- fidget
 vim.keymap.set('n', '<Leader>n', '<Cmd>Fidget history<CR>', { desc = 'Show notification history' })
 
