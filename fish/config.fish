@@ -15,6 +15,9 @@ end
 set local_config ~/.config/fish/config.local.fish
 test -r $local_config; and source $local_config
 set -e local_config
+if not set -q NOTES_PATH
+    set -gx NOTES_PATH ~/.notes
+end
 
 if status is-interactive
     if not command -q starship
