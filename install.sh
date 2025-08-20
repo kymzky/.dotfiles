@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dir=$(dirname $(realpath $0))
+dir=$(dirname "$(realpath "$0")")
 
 function create_symlink() {
   local source="$1"
