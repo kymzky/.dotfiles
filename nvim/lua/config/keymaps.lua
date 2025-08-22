@@ -24,10 +24,7 @@ vim.keymap.set('n', '<Leader><Leader>', '<Cmd>FzfLua files<CR>', { desc = 'Searc
 vim.keymap.set('n', '<Leader>/', '<Cmd>FzfLua live_grep<CR>', { desc = 'FzfLua live_grep' })
 vim.keymap.set('n', '<Leader>,', '<Cmd>FzfLua buffers<CR>', { desc = 'Search buffers' })
 vim.keymap.set('n', '<Leader>ca', '<Cmd>FzfLua lsp_code_actions<CR>', { desc = 'Code actions' })
-vim.keymap.set('n', '<Leader>gb', '<Cmd>FzfLua git_branches<CR>', { desc = 'Git branches' })
 vim.keymap.set('n', '<Leader>gh', '<Cmd>FzfLua git_bcommits<CR>', { desc = 'Git history' })
-vim.keymap.set('n', '<Leader>gl', '<Cmd>FzfLua git_commits<CR>', { desc = 'Git log' })
-vim.keymap.set('n', '<Leader>gs', '<Cmd>FzfLua git_status<CR>', { desc = 'Git status' })
 vim.keymap.set('n', '<Leader>sc', '<Cmd>FzfLua command_history<CR>', { desc = 'Search command history' })
 vim.keymap.set('n', '<Leader>sC', '<Cmd>FzfLua commands<CR>', { desc = 'Search commands' })
 vim.keymap.set('n', '<Leader>sd', '<Cmd>FzfLua diagnostics_workspace<CR>', { desc = 'Search diagnostics' })
@@ -42,6 +39,7 @@ end, { desc = 'Gitsigns next hunk' })
 vim.keymap.set('n', '<Leader>H', function()
 	package.loaded.gitsigns.nav_hunk('prev')
 end, { desc = 'Gitsigns previous hunk' })
+vim.keymap.set('n', '<Leader>gb', '<Cmd>Gitsigns blame<CR>', { desc = 'Gitsigns blame buffer' })
 vim.keymap.set('n', '<Leader>gB', '<Cmd>Gitsigns blame_line<CR>', { desc = 'Gitsigns blame line' })
 
 -- grug-far
