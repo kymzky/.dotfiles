@@ -24,6 +24,7 @@ vim.keymap.set('n', '<Leader><Leader>', '<Cmd>FzfLua files<CR>', { desc = 'Searc
 vim.keymap.set('n', '<Leader>/', '<Cmd>FzfLua live_grep<CR>', { desc = 'FzfLua live_grep' })
 vim.keymap.set('n', '<Leader>,', '<Cmd>FzfLua buffers<CR>', { desc = 'Search buffers' })
 vim.keymap.set('n', '<Leader>ca', '<Cmd>FzfLua lsp_code_actions<CR>', { desc = 'Code actions' })
+vim.keymap.set('n', '<Leader>cc', '<Cmd>FzfLua colorschemes<CR>', { desc = 'Change colorscheme' })
 vim.keymap.set('n', '<Leader>gh', '<Cmd>FzfLua git_bcommits<CR>', { desc = 'Git history' })
 vim.keymap.set('n', '<Leader>sc', '<Cmd>FzfLua command_history<CR>', { desc = 'Search command history' })
 vim.keymap.set('n', '<Leader>sC', '<Cmd>FzfLua commands<CR>', { desc = 'Search commands' })

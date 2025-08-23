@@ -34,6 +34,7 @@ require('lazy').setup({
 		{ import = 'plugins/editor' },
 		{ import = 'plugins/ide/mason' },
 		{ import = 'plugins/ide' },
+		{ import = 'plugins/ui/themes' },
 		{ import = 'plugins/ui' },
 		{ import = 'plugins/util' },
 	},
