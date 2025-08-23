@@ -1,7 +1,7 @@
 local lsp_config = require('config.lsp')
 return {
 	'stevearc/conform.nvim',
-	tag = 'v9.0.0',
+	tag = 'v9.1.0',
 	event = 'VeryLazy',
 	config = function()
 		require('conform').setup({
