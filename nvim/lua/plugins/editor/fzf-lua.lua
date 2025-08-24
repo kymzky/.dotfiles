@@ -46,6 +46,7 @@ return {
 					'^onedark_dark$',
 					'^onedark_light$',
 					'^onedark_vivid$',
+					'^onehalf[-]lush[-]dark$',
 					'^onelight$',
 					'^pablo$',
 					'^peachpuff$',
