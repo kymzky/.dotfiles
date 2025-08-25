@@ -43,5 +43,6 @@ require('lazy').setup({
 	},
 })
 
+require('config.colorscheme')
 require('config.keymaps')
 require('config.autocmds')
