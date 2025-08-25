@@ -62,6 +62,7 @@ vim.keymap.set('n', '<Leader>l', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
 local function open_lazygit()
 	if vim.env.TMUX ~= nil then
 		vim.fn.system('tmux popup -E -d "#{pane_current_path}" -h 95% -w 95% lazygit')
+		vim.cmd('checktime')
 	else
 		vim.notify('Not running in tmux session', vim.log.levels.WARN)
 	end
