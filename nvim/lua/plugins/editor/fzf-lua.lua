@@ -6,6 +6,7 @@ return {
 				['--pointer'] = '▌',
 				['--marker'] = '┃',
 				['--layout'] = 'reverse-list',
+				['--cycle'] = true,
 			},
 			fzf_colors = {
 				true,
