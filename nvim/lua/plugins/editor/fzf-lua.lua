@@ -15,18 +15,27 @@ return {
 				['gutter'] = '-1',
 			},
 			winopts = {
+				split = 'botright new',
 				preview = {
-					title = false,
+					border = 'none',
 				},
 			},
 			buffers = {
 				winopts = {
-					title = false,
+					split = 'botright vnew',
+					preview = {
+						hidden = true,
+					},
+					on_create = function()
+						vim.cmd('vertical resize 100')
+					end,
 				},
 			},
 			colorschemes = {
 				winopts = {
-					title = false,
+					on_create = function()
+						vim.cmd('resize 5')
+					end,
 				},
 				ignore_patterns = {
 					'^blue$',
@@ -65,52 +74,27 @@ return {
 					'^zellner$',
 				},
 			},
-			command_history = {
-				winopts = {
-					title = false,
-				},
-			},
-			commands = {
-				winopts = {
-					title = false,
-				},
-			},
-			diagnostics = {
-				winopts = {
-					title = false,
-				},
-			},
 			files = {
-				winopts = {
-					title = false,
-				},
 				git_icons = true,
 				follow = true,
 				no_ignore = true,
 			},
-			git = {
-				bcommits = {
-					winopts = {
-						title = false,
-					},
-				},
-			},
 			grep = {
 				winopts = {
-					title = false,
+					split = 'topleft new',
 				},
 				git_icons = true,
 				follow = true,
-			},
-			keymaps = {
-				winopts = {
-					title = false,
+				fzf_opts = {
+					['--layout'] = 'reverse',
 				},
 			},
 			lsp = {
 				code_actions = {
 					winopts = {
-						title = false,
+						on_create = function()
+							vim.cmd('resize 20')
+						end,
 					},
 				},
 			},
