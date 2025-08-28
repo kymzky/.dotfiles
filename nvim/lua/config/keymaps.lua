@@ -77,10 +77,6 @@ vim.keymap.set('n', '<Leader>d', vim.diagnostic.goto_next, { desc = 'Diagnostic 
 vim.keymap.set('n', '<Leader>D', vim.diagnostic.goto_prev, { desc = 'Diagnostic go to previous' })
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 
--- Netrw
-vim.keymap.set('n', '<Leader>e', '<Cmd>Lexplore<CR>')
-vim.keymap.set('n', '<Leader>E', '<Cmd>Lexplore %:p:h<CR>')
-
 -- nvim-dap
 vim.keymap.set('n', '<Leader>db', function()
 	require('dap').toggle_breakpoint()
@@ -108,6 +104,17 @@ end, { desc = 'DAP terminate' })
 vim.keymap.set('n', '<Leader>du', function()
 	require('dapui').toggle()
 end, { desc = 'Toggle DAP UI' })
+
+-- oil-nvim
+vim.keymap.set('n', '<Leader>e', function()
+	vim.cmd('botright new')
+	vim.cmd('Oil')
+end, { desc = 'Oil' })
+vim.keymap.set('n', '<Leader>E', function()
+	local dir = vim.fn.expand('%:p:h')
+	vim.cmd('botright new')
+	vim.cmd('Oil ' .. dir)
+end, { desc = "Oil current file's directory" })
 
 -- statusline
 vim.keymap.set('n', '<Leader>p', function()

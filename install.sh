@@ -22,4 +22,4 @@ create_symlink "$dir"/lazygit ~/.config/lazygit
 create_symlink "$dir"/lsd ~/.config/lsd
 create_symlink "$dir"/nix ~/.config/nix
 create_symlink "$dir"/nvim ~/.config/nvim
-create_symlink "$dir"/tmux/.tmux.conf ~/.tmux.conf
+create_symlink "$dir"/tmux ~/.config/tmux

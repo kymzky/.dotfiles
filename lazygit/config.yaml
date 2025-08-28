@@ -1,7 +1,5 @@
 gui:
   nerdFontsVersion: "3"
-  theme:
-    lightTheme: false
 git:
   log:
     showGraph: always

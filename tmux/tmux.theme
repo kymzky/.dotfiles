@@ -1,0 +1,13 @@
+set -g base-index 1
+set-option -g status-interval 1
+set-option -g automatic-rename-format '#{b:pane_current_path}'
+setw -g pane-base-index 1
+setw -g mouse on
+
+set -g status-left ""
+set -g status-right ""
+
+set -g status-style bg=default
+setw -g window-status-format '#[fg=#FFE787 bg=#B02615] #I #[fg=#000000 bg=#FFE787] #W '
+setw -g window-status-current-format '#[fg=#FFE787 bg=#B02615] #I #[fg=#000000 bg=#FF8800] #W '
+set -g message-style 'fg=#000000 bg=#FF8800'

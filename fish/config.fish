@@ -19,11 +19,10 @@ if not set -q NOTES_PATH
     set -gx NOTES_PATH ~/.notes
 end
 
-if status is-interactive
-    if not command -q starship
-        curl -sS https://starship.rs/install.sh | sh
-    end
+set -gx LG_CONFIG_FILE "$HOME/.config/lazygit/config.yaml,$HOME/.config/lazygit/theme.yaml"
+set -g fish_prompt_pwd_dir_length 0
 
+if status is-interactive
     set fish_greeting
 
     # dnf
@@ -74,14 +73,14 @@ if status is-interactive
 
     # Git repositories
     for d in (find ~/Git -type d -name .git)
-      set dir (dirname $d)
-      set name (basename $dir)
-      alias $name "cd $dir" >/dev/null
+        set dir (dirname $d)
+        set name (basename $dir)
+        alias $name "cd $dir" >/dev/null
     end
 
     # Other aliases
     alias c='configuration'
     alias n='notes'
-
-    starship init fish | source
 end
+
+source ~/.config/fish/theme.fish
