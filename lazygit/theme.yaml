@@ -1,0 +1,9 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#FF8800"
+      - bold
+    inactiveBorderColor:
+      - "#FFE787"
+    defaultFgColor:
+      - "#FFE787"
