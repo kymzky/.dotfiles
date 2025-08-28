@@ -82,3 +82,5 @@ if status is-interactive
     alias c='configuration'
     alias n='notes'
 end
+
+source ~/.config/fish/theme.fish
