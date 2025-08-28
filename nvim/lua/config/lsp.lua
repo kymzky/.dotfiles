@@ -4,6 +4,7 @@ lsp.servers = {
 	'ansiblels',
 	'bashls',
 	'dockerls',
+	'fish_lsp',
 	'jdtls',
 	'gopls',
 	'helm_ls',
