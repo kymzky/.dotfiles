@@ -43,7 +43,6 @@ require('lazy').setup({
 	},
 })
 
-require('colors.mrgreengenes').setup()
--- require('config.colorscheme')
+require('config.colorscheme')
 require('config.keymaps')
 require('config.autocmds')
