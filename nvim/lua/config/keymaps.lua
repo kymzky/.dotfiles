@@ -25,13 +25,39 @@ vim.keymap.set('n', '<Leader>/', '<Cmd>FzfLua live_grep<CR>', { desc = 'FzfLua l
 vim.keymap.set('n', '<Leader>,', '<Cmd>FzfLua buffers<CR>', { desc = 'Search buffers' })
 vim.keymap.set('n', '<Leader>ca', '<Cmd>FzfLua lsp_code_actions<CR>', { desc = 'Code actions' })
 vim.keymap.set('n', '<Leader>cc', '<Cmd>FzfLua colorschemes<CR>', { desc = 'Change colorscheme' })
+vim.keymap.set('n', '<Leader>gb', '<Cmd>FzfLua git_branches<CR>', { desc = 'Git branches' })
 vim.keymap.set('n', '<Leader>gh', '<Cmd>FzfLua git_bcommits<CR>', { desc = 'Git history' })
+vim.keymap.set('n', '<Leader>gl', '<Cmd>FzfLua git_commits<CR>', { desc = 'Git logs' })
+vim.keymap.set('n', '<Leader>gs', '<Cmd>FzfLua git_status<CR>', { desc = 'Git status' })
 vim.keymap.set('n', '<Leader>sc', '<Cmd>FzfLua command_history<CR>', { desc = 'Search command history' })
 vim.keymap.set('n', '<Leader>sC', '<Cmd>FzfLua commands<CR>', { desc = 'Search commands' })
 vim.keymap.set('n', '<Leader>sd', '<Cmd>FzfLua diagnostics_workspace<CR>', { desc = 'Search diagnostics' })
 vim.keymap.set('n', '<Leader>sk', '<Cmd>FzfLua keymaps<CR>', { desc = 'Search keymaps' })
 vim.keymap.set('n', '<Leader>sw', '<Cmd>FzfLua grep_cword<CR>', { desc = 'Search word' })
 vim.keymap.set('n', 'gr', '<Cmd>FzfLua lsp_references<CR>', { desc = 'Go to references' })
+
+-- git
+vim.keymap.set('n', '<Leader>gc', function()
+	local msg = vim.fn.input('Commit message: ')
+	if msg == '' then
+		vim.notify('Commit canceled: no message', vim.log.levels.WARN)
+		return
+	end
+	local output = vim.fn.system('git commit -m "' .. msg .. '"')
+	if vim.v.shell_error == 0 then
+		vim.notify('Commit successful: ' .. msg, vim.log.levels.INFO)
+	else
+		vim.notify('Commit failed:\n' .. output, vim.log.levels.ERROR)
+	end
+end, { desc = 'Git commit' })
+vim.keymap.set('n', '<Leader>gp', function()
+	local output = vim.fn.system('git pull')
+	vim.notify(output, vim.log.levels.INFO, { title = 'Git Pull' })
+end, { desc = 'Git pull' })
+vim.keymap.set('n', '<Leader>gP', function()
+	local output = vim.fn.system('git push')
+	vim.notify(output, vim.log.levels.INFO, { title = 'Git Push' })
+end, { desc = 'Git push' })
 
 -- gitsigns
 vim.keymap.set('n', '<Leader>h', function()
@@ -40,8 +66,7 @@ end, { desc = 'Gitsigns next hunk' })
 vim.keymap.set('n', '<Leader>H', function()
 	package.loaded.gitsigns.nav_hunk('prev')
 end, { desc = 'Gitsigns previous hunk' })
-vim.keymap.set('n', '<Leader>gb', '<Cmd>Gitsigns blame<CR>', { desc = 'Gitsigns blame buffer' })
-vim.keymap.set('n', '<Leader>gB', '<Cmd>Gitsigns blame_line<CR>', { desc = 'Gitsigns blame line' })
+vim.keymap.set('n', '<Leader>gB', '<Cmd>Gitsigns blame<CR>', { desc = 'Gitsigns blame buffer' })
 
 -- grug-far
 vim.keymap.set('n', '<Leader>sr', function()
@@ -59,17 +84,17 @@ end, { desc = 'grug-far search and replace' })
 vim.keymap.set('n', '<Leader>l', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
 
 -- Lazygit
-local function open_lazygit()
-	if vim.env.TMUX ~= nil then
-		vim.fn.system('tmux popup -E -d "#{pane_current_path}" -h 95% -w 95% lazygit')
-		vim.cmd('checktime')
-	else
-		vim.notify('Not running in tmux session', vim.log.levels.WARN)
-	end
-end
-vim.keymap.set('n', '<Leader>gg', open_lazygit, {
-	desc = 'Open lazygit in floating tmux window',
-})
+-- local function open_lazygit()
+-- 	if vim.env.TMUX ~= nil then
+-- 		vim.fn.system('tmux popup -E -d "#{pane_current_path}" -h 95% -w 95% lazygit')
+-- 		vim.cmd('checktime')
+-- 	else
+-- 		vim.notify('Not running in tmux session', vim.log.levels.WARN)
+-- 	end
+-- end
+-- vim.keymap.set('n', '<Leader>gg', open_lazygit, {
+-- 	desc = 'Open lazygit in floating tmux window',
+-- })
 
 -- LSP
 vim.keymap.set({ 'n', 'v' }, '<Leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
