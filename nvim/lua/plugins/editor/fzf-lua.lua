@@ -1,6 +1,7 @@
 return {
 	'ibhagwan/fzf-lua',
 	opts = function()
+		local actions = require('fzf-lua').actions
 		return {
 			fzf_opts = {
 				['--pointer'] = '▌',
@@ -19,6 +20,12 @@ return {
 				split = 'botright new',
 				preview = {
 					border = 'none',
+				},
+			},
+			keymap = {
+				fzf = {
+					['ctrl-d'] = 'preview-page-down',
+					['ctrl-u'] = 'preview-page-up',
 				},
 			},
 			buffers = {
@@ -79,6 +86,21 @@ return {
 				git_icons = true,
 				follow = true,
 				no_ignore = true,
+			},
+			git = {
+				status = {
+					winopts = {
+						split = 'topleft vnew',
+						on_create = function()
+							vim.cmd('vertical resize 100')
+						end,
+					},
+					actions = {
+						['right'] = false,
+						['left'] = false,
+						['space'] = { fn = actions.git_stage_unstage, reload = true },
+					},
+				},
 			},
 			grep = {
 				winopts = {
