@@ -4,6 +4,7 @@ set -g lightgreen 45D42A
 set -g orange FF8800
 set -g red B02615
 set -g yellow FFE787
+set -g white FFFFFF
 
 set -g fish_color_normal $white
 set -g fish_color_command $orange
