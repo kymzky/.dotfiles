@@ -82,7 +82,6 @@
               set -ga PATH ${pkgs.which}/bin
               $EXTRA_COMMANDS
               export PATH
-              tmux
             "
           '';
         };
