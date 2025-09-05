@@ -1,5 +1,5 @@
 return {
-	'nvim-neotest/nvim-nio',
-	tag = 'v1.10.1',
-	event = 'BufReadPre',
+	"nvim-neotest/nvim-nio",
+	tag = "v1.10.1",
+	event = "BufReadPre",
 }

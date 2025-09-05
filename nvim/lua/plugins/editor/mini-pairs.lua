@@ -1,8 +1,8 @@
 return {
-	'echasnovski/mini.pairs',
-	tag = 'v0.15.0',
-	event = 'InsertEnter',
+	"echasnovski/mini.pairs",
+	tag = "v0.15.0",
+	event = "InsertEnter",
 	config = function()
-		require('mini.pairs').setup()
+		require("mini.pairs").setup()
 	end,
 }

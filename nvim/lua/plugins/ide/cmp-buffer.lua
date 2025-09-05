@@ -1,6 +1,6 @@
 return {
 	{
-		'hrsh7th/cmp-buffer',
-		event = 'BufReadPre',
+		"hrsh7th/cmp-buffer",
+		event = "BufReadPre",
 	},
 }

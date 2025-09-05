@@ -1,4 +1,4 @@
 return {
-	'CodeGradox/onehalf-lush',
-	event = 'VeryLazy',
+	"CodeGradox/onehalf-lush",
+	event = "VeryLazy",
 }

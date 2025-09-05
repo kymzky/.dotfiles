@@ -1,85 +1,85 @@
 return {
-	'ibhagwan/fzf-lua',
+	"ibhagwan/fzf-lua",
 	opts = function()
-		local actions = require('fzf-lua').actions
+		local actions = require("fzf-lua").actions
 		return {
 			fzf_opts = {
-				['--pointer'] = '▌',
-				['--marker'] = '┃',
-				['--layout'] = 'reverse-list',
-				['--cycle'] = true,
+				["--pointer"] = "▌",
+				["--marker"] = "┃",
+				["--layout"] = "reverse-list",
+				["--cycle"] = true,
 			},
 			fzf_colors = {
 				true,
-				['prompt'] = { 'fg', 'Normal' },
-				['pointer'] = { 'fg', 'Normal' },
-				['marker'] = { 'fg', 'Normal' },
-				['gutter'] = '-1',
+				["prompt"] = { "fg", "Normal" },
+				["pointer"] = { "fg", "Normal" },
+				["marker"] = { "fg", "Normal" },
+				["gutter"] = "-1",
 			},
 			winopts = {
-				split = 'botright new',
+				split = "botright new",
 				preview = {
-					border = 'none',
+					border = "none",
 				},
 			},
 			keymap = {
 				fzf = {
-					['ctrl-d'] = 'preview-page-down',
-					['ctrl-u'] = 'preview-page-up',
+					["ctrl-d"] = "preview-page-down",
+					["ctrl-u"] = "preview-page-up",
 				},
 			},
 			buffers = {
 				winopts = {
-					split = 'botright vnew',
+					split = "botright vnew",
 					preview = {
 						hidden = true,
 					},
 					on_create = function()
-						vim.cmd('vertical resize 100')
+						vim.cmd("vertical resize 100")
 					end,
 				},
 			},
 			colorschemes = {
 				winopts = {
 					on_create = function()
-						vim.cmd('resize 5')
+						vim.cmd("resize 5")
 					end,
 				},
 				ignore_patterns = {
-					'^blue$',
-					'^cyberdream[-]light$',
-					'^darkblue$',
-					'^default$',
-					'^delek$',
-					'^desert$',
-					'^elflord$',
-					'^evening$',
-					'^habamax$',
-					'^industry$',
-					'^koehler$',
-					'^lunaperche$',
-					'^morning$',
-					'^murphy$',
-					'^onedark_dark$',
-					'^onedark_light$',
-					'^onedark_vivid$',
-					'^onehalf[-]lush[-]dark$',
-					'^onelight$',
-					'^pablo$',
-					'^peachpuff$',
-					'^quiet$',
-					'^retrobox$',
-					'^ron$',
-					'^shine$',
-					'^slate$',
-					'^sorbet$',
-					'^torte$',
-					'^unokai$',
-					'^vaporwave$',
-					'^vim$',
-					'^wildcharm$',
-					'^zaibatsu$',
-					'^zellner$',
+					"^blue$",
+					"^cyberdream[-]light$",
+					"^darkblue$",
+					"^default$",
+					"^delek$",
+					"^desert$",
+					"^elflord$",
+					"^evening$",
+					"^habamax$",
+					"^industry$",
+					"^koehler$",
+					"^lunaperche$",
+					"^morning$",
+					"^murphy$",
+					"^onedark_dark$",
+					"^onedark_light$",
+					"^onedark_vivid$",
+					"^onehalf[-]lush[-]dark$",
+					"^onelight$",
+					"^pablo$",
+					"^peachpuff$",
+					"^quiet$",
+					"^retrobox$",
+					"^ron$",
+					"^shine$",
+					"^slate$",
+					"^sorbet$",
+					"^torte$",
+					"^unokai$",
+					"^vaporwave$",
+					"^vim$",
+					"^wildcharm$",
+					"^zaibatsu$",
+					"^zellner$",
 				},
 			},
 			files = {
@@ -90,33 +90,33 @@ return {
 			git = {
 				status = {
 					winopts = {
-						split = 'topleft vnew',
+						split = "topleft vnew",
 						on_create = function()
-							vim.cmd('vertical resize 100')
+							vim.cmd("vertical resize 100")
 						end,
 					},
 					actions = {
-						['right'] = false,
-						['left'] = false,
-						['space'] = { fn = actions.git_stage_unstage, reload = true },
+						["right"] = false,
+						["left"] = false,
+						["space"] = { fn = actions.git_stage_unstage, reload = true },
 					},
 				},
 			},
 			grep = {
 				winopts = {
-					split = 'topleft new',
+					split = "topleft new",
 				},
 				git_icons = true,
 				follow = true,
 				fzf_opts = {
-					['--layout'] = 'reverse',
+					["--layout"] = "reverse",
 				},
 			},
 			lsp = {
 				code_actions = {
 					winopts = {
 						on_create = function()
-							vim.cmd('resize 20')
+							vim.cmd("resize 20")
 						end,
 					},
 				},
@@ -124,7 +124,7 @@ return {
 		}
 	end,
 	config = function(_, opts)
-		local fzf_lua = require('fzf-lua')
+		local fzf_lua = require("fzf-lua")
 		fzf_lua.setup(opts)
 		fzf_lua.register_ui_select()
 	end,

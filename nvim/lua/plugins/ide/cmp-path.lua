@@ -1,6 +1,6 @@
 return {
 	{
-		'hrsh7th/cmp-path',
-		event = 'BufReadPre',
+		"hrsh7th/cmp-path",
+		event = "BufReadPre",
 	},
 }

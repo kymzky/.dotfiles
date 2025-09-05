@@ -4,43 +4,43 @@ vim.diagnostic.config({
 
 local g = vim.g
 g.autoformat = true
-g.mapleader = ' '
-g.maplocalleader = '\\'
+g.mapleader = " "
+g.maplocalleader = "\\"
 g.markdown_recommended_style = 0 -- fix markdown indentation settings
 g.netrw_banner = 0
-g.netrw_localcopydircmd = 'cp -r'
+g.netrw_localcopydircmd = "cp -r"
 g.netrw_keepdir = 0
 g.netrw_winsize = 20
 
 local opt = vim.opt
 opt.autowrite = true
-opt.clipboard = 'unnamedplus' -- sync with system clipboard
+opt.clipboard = "unnamedplus" -- sync with system clipboard
 opt.cmdheight = 0
-opt.completeopt = 'menu,menuone'
+opt.completeopt = "menu,menuone"
 opt.confirm = true
 opt.expandtab = true
 opt.fillchars = {
-	foldopen = '',
-	foldclose = '',
-	fold = ' ',
-	foldsep = ' ',
-	diff = '╱',
-	eob = ' ',
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
 }
 opt.foldlevel = 99
-opt.foldmethod = 'indent'
+opt.foldmethod = "indent"
 opt.ignorecase = true
 opt.laststatus = 3 -- enable global statusline
 opt.linebreak = true
 opt.number = true
 opt.relativenumber = true
 opt.sessionoptions =
-	{ 'buffers', 'curdir', 'folds', 'globals', 'help', 'localoptions', 'skiprtp', 'tabpages', 'winsize' }
+	{ "buffers", "curdir", "folds", "globals", "help", "localoptions", "skiprtp", "tabpages", "winsize" }
 opt.shiftround = true
 opt.shiftwidth = 2
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.smartindent = true
-opt.spelllang = { 'en' }
+opt.spelllang = { "en" }
 opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 2
@@ -50,6 +50,6 @@ opt.undolevels = 10000
 opt.updatetime = 100
 opt.wrap = false
 
-require('config.colors')
-require('config.statusline')
-require('config.local')
+require("config.colors")
+require("config.statusline")
+require("config.local")

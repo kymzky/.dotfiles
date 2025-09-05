@@ -1,9 +1,9 @@
 return {
-	'j-hui/fidget.nvim',
-	tag = 'v1.6.1',
-	event = 'BufReadPost',
+	"j-hui/fidget.nvim",
+	tag = "v1.6.1",
+	event = "BufReadPost",
 	config = function()
-		require('fidget').setup({
+		require("fidget").setup({
 			notification = {
 				override_vim_notify = true,
 				window = {

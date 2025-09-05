@@ -1,4 +1,4 @@
 return {
-	'kymzky/mrgreengenes.nvim',
-	tag = 'v0.0.1',
+	"kymzky/mrgreengenes.nvim",
+	tag = "v0.0.1",
 }
