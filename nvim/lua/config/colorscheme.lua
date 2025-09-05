@@ -1,9 +1,9 @@
 local api = vim.api
-local statefile = vim.fn.stdpath('state') .. '/colorscheme'
-local default_colorscheme = 'onedark'
+local statefile = vim.fn.stdpath("state") .. "/colorscheme"
+local default_colorscheme = "onedark"
 
-api.nvim_create_autocmd('ColorScheme', {
-	group = api.nvim_create_augroup('colorscheme', { clear = true }),
+api.nvim_create_autocmd("ColorScheme", {
+	group = api.nvim_create_augroup("colorscheme", { clear = true }),
 	callback = function()
 		local name = vim.g.colors_name or default_colorscheme
 		vim.fn.writefile({ name }, statefile)

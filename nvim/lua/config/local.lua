@@ -1,9 +1,9 @@
 local function load_project_specific_settings()
-	local nvim_lua = vim.fn.getcwd() .. '/.nvim.lua'
-	local file_handle = io.open(nvim_lua, 'r')
+	local nvim_lua = vim.fn.getcwd() .. "/.nvim.lua"
+	local file_handle = io.open(nvim_lua, "r")
 
 	if file_handle then
-		local contents = file_handle:read('*a')
+		local contents = file_handle:read("*a")
 		file_handle:close()
 
 		local success, err = pcall(function()
@@ -11,7 +11,7 @@ local function load_project_specific_settings()
 		end)
 
 		if not success then
-			print('Error executing .nvim.lua:', err)
+			print("Error executing .nvim.lua:", err)
 		end
 	end
 end
