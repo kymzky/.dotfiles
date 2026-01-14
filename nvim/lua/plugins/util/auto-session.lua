@@ -1,6 +1,6 @@
 return {
 	"rmagatti/auto-session",
-	tag = "v2.5.0",
+	tag = "v2.5.1",
 	lazy = false,
 	config = function()
 		require("auto-session").setup({

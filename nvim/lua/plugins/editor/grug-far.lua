@@ -1,5 +1,5 @@
 return {
 	"MagicDuck/grug-far.nvim",
-	tag = "1.5.0",
+	tag = "1.6.58",
 	lazy = true,
 }
