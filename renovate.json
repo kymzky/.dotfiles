@@ -3,6 +3,7 @@
   "assignees": [
     "kymzky"
   ],
+  "dependencyDashboard": true,
   "customManagers": [
     {
       "customType": "regex",
