@@ -7,8 +7,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^nvim/lua/plugins/.*\\.lua$"
+      "managerFilePatterns": [
+        "/^nvim/lua/plugins/.*\\.lua$/"
       ],
       "matchStrings": [
         "return\\s*{\\s*'(?<depName>[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+)'(?:,\\s*tag\\s*=\\s*'(?<currentValue>[^']+)')?"
