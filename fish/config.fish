@@ -4,17 +4,18 @@ function execute_script
     cd -
 end
 
-function configuration
-    execute_script configuration.sh
-end
-
 function notes
     execute_script notes.sh
+end
+
+function update
+    execute_script update.sh
 end
 
 set local_config ~/.config/fish/config.local.fish
 test -r $local_config; and source $local_config
 set -e local_config
+
 if not set -q NOTES_PATH
     set -gx NOTES_PATH ~/.notes
 end
@@ -24,17 +25,6 @@ set -g fish_prompt_pwd_dir_length 0
 
 if status is-interactive
     set fish_greeting
-
-    # dnf
-    alias u='sudo dnf upgrade -y'
-
-    # git
-    alias gap='git add --patch'
-    alias gcm='git commit -m'
-    alias gd='git diff'
-    alias gds='git diff --staged'
-    alias gp='git pull'
-    alias gP='git push'
 
     # ls
     if command -q lsd
@@ -64,8 +54,8 @@ if status is-interactive
     end
 
     # Other aliases
-    alias c='configuration'
     alias n='notes'
+    alias u='update'
 end
 
 source ~/.config/fish/theme.fish
