@@ -4,10 +4,11 @@
     "kymzky"
   ],
   "dependencyDashboard": true,
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": [
-        "\\.lua$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/\\.lua$/"
       ],
       "matchStrings": [
         "return\\s*{\\s*'(?<depName>[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+)'(?:,\\s*tag\\s*=\\s*'(?<currentValue>[^']+)')?"
