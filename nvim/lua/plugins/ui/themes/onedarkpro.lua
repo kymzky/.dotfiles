@@ -1,6 +1,6 @@
 return {
 	"olimorris/onedarkpro.nvim",
-	tag = "v2.21.0",
+	tag = "v2.26.0",
 	event = "VeryLazy",
 	config = {
 		options = {
