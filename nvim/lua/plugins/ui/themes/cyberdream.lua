@@ -1,5 +1,5 @@
 return {
 	"scottmckendry/cyberdream.nvim",
-	tag = "v5.3.0",
+	tag = "v5.2.0",
 	event = "VeryLazy",
 }
