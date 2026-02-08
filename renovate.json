@@ -8,10 +8,10 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^nvim/lua/plugins/.*\\.lua$/"
+        "**/nvim/**/plugins/**/*.lua"
       ],
       "matchStrings": [
-        "return\\s*{\\s*'(?<depName>[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+)'(?:,\\s*tag\\s*=\\s*'(?<currentValue>[^']+)')?"
+        "['\"](?<depName>[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+)['\"](?:\\s*,\\s*tag\\s*=\\s*['\"](?<currentValue>[^'\"]+)['\"])?"
       ],
       "datasourceTemplate": "github-releases"
     }

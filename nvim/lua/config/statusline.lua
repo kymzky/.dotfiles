@@ -1,30 +1,8 @@
 Statusline = {}
+local timer_running = false
 
-local function git_branch()
-	local branch = vim.b.gitsigns_head or ""
-	if branch == "" then
-		return ""
-	end
-	return string.format("%%#GitBranch# %s ", branch)
-end
-
-local function filename()
-	local fname = vim.fn.expand("%:t")
-	if fname == "" then
-		return ""
-	end
-	local path = vim.bo.modified and string.format("%%#FilenameModified#%s* ", fname)
-		or string.format("%%#FilenameNormal#%s ", fname)
-
-	if not vim.b.filename_toggle then
-		vim.b.filename_toggle = false
-	end
-
-	if vim.b.filename_toggle then
-		return string.format("%%#FilenamePath#%s ", vim.fn.expand("%:~:."))
-	else
-		return path
-	end
+local function file()
+	return "%f%{&modified?'*':''}"
 end
 
 local function lsp()
@@ -46,47 +24,19 @@ local function lsp()
 	local info = ""
 
 	if count["errors"] ~= 0 then
-		errors = " %#LspDiagnosticsSignError# " .. count["errors"]
+		errors = " %#DiagnosticError# " .. count["errors"]
 	end
 	if count["warnings"] ~= 0 then
-		warnings = " %#LspDiagnosticsSignWarning# " .. count["warnings"]
+		warnings = " %#DiagnosticWarn# " .. count["warnings"]
 	end
 	if count["hints"] ~= 0 then
-		hints = " %#LspDiagnosticsSignHint# " .. count["hints"]
+		hints = " %#DiagnosticHint# " .. count["hints"]
 	end
 	if count["info"] ~= 0 then
-		info = " %#LspDiagnosticsSignInformation# " .. count["info"]
+		info = " %#DiagnosticInfo# " .. count["info"]
 	end
 
 	return errors .. warnings .. hints .. info .. "%#Normal#"
-end
-
-local function git_status()
-	local status = vim.b.gitsigns_status_dict
-	if not status then
-		return ""
-	end
-
-	local added = status.added or 0
-	local changed = status.changed or 0
-	local removed = status.removed or 0
-
-	local git_indicators = {}
-	if added > 0 then
-		table.insert(git_indicators, "%#GitSignsAddLine#" .. string.format("  %d", added) .. "%#Normal#")
-	end
-	if changed > 0 then
-		table.insert(git_indicators, "%#GitSignsChangeLine#" .. string.format("  %d", changed) .. "%#Normal#")
-	end
-	if removed > 0 then
-		table.insert(git_indicators, "%#GitSignsDeleteLine#" .. string.format("  %d", removed) .. "%#Normal#")
-	end
-
-	if #git_indicators == 0 then
-		return ""
-	end
-
-	return string.format(" %s ", table.concat(git_indicators, " "))
 end
 
 local function position()
@@ -94,28 +44,32 @@ local function position()
 	local col = vim.fn.col(".")
 	local total_lines = vim.fn.line("$")
 	local percentage = math.floor((line / total_lines) * 100)
-	return string.format(" %%#Normal# %d,%d%%  %d%%%% ", line, col, percentage)
+	return string.format("%d,%d%%  - %d%%%%", line, col, percentage)
 end
+
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	callback = function()
+		if timer_running then
+			return
+		end
+		timer_running = true
+		vim.defer_fn(function()
+			vim.cmd("redrawstatus")
+			timer_running = false
+		end, 100)
+	end,
+})
 
 Statusline = function()
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = "*",
-		once = true,
-		callback = function()
-			vim.cmd([[redrawstatus]])
-		end,
-	})
-
 	return table.concat({
-		git_branch(),
-		"%#Statusline#",
-		"%#Normal# ",
-		filename(),
+		"  ",
+		file(),
+		"    ",
 		lsp(),
 		"%=",
-		git_status(),
 		position(),
+		" ",
 	})
 end
 
-vim.opt.statusline = "%!v:lua.Statusline()"
+vim.o.statusline = "%!v:lua.Statusline()"
