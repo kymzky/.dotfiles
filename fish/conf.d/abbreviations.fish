@@ -6,9 +6,9 @@ if status is-interactive
     abbr ls lsd
     abbr lt lsd --tree
     abbr m multipass
-    abbr n notes
+    abbr n nvim
+    abbr nn notes
     abbr t go-task
     abbr tl go-task --list
     abbr u update
-    abbr vim nvim
 end
