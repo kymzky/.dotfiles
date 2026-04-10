@@ -1,7 +1,7 @@
 local lsp_config = require("config.lsp")
 return {
 	"neovim/nvim-lspconfig",
-	tag = "v2.7.0",
+	tag = "v2.8.0",
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		servers = {
