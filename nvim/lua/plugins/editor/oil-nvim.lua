@@ -3,6 +3,9 @@ return {
 	tag = "v2.15.0",
 	opts = {
 		skip_confirm_for_simple_edits = true,
+		lsp_file_methods = {
+			enabled = false,
+		},
 		view_options = {
 			show_hidden = true,
 		},
