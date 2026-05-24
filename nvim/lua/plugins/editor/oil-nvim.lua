@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	tag = "v2.15.0",
+	tag = "v2.16.0",
 	opts = {
 		skip_confirm_for_simple_edits = true,
 		lsp_file_methods = {
