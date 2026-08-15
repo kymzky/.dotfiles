@@ -9,5 +9,5 @@ if command -v dnf &> /dev/null; then
 fi
 
 if command -v brew &> /dev/null; then
-  brew update && brew upgrade
+  brew update && brew upgrade -y
 fi
