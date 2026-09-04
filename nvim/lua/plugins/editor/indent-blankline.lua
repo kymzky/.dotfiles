@@ -1,6 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	tag = "v3.9.1",
+	tag = "v3.10.1",
 	main = "ibl",
 	---@module "ibl"
 	event = "BufReadPost",
