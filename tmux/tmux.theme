@@ -12,3 +12,5 @@ setw -g window-status-current-style none
 setw -g window-status-format '#[fg=#FFE787 bg=#B02615] #I #[fg=#000000 bg=#FFE787] #W '
 setw -g window-status-current-format '#[fg=#FFE787 bg=#B02615] #I #[fg=#000000 bg=#FF8800] #W '
 set -g message-style 'fg=#000000 bg=#FF8800'
+set -g popup-style 'fg=#FFE787 bg=#0A4200'
+set -g popup-border-style 'fg=#FF8800 bg=#0A4200'
