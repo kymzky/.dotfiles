@@ -21,4 +21,5 @@ create_symlink "$dir"/fish ~/.config/fish
 create_symlink "$dir"/lazygit ~/.config/lazygit
 create_symlink "$dir"/lsd ~/.config/lsd
 create_symlink "$dir"/nvim ~/.config/nvim
+create_symlink "$dir"/opencode ~/.config/opencode
 create_symlink "$dir"/tmux ~/.config/tmux

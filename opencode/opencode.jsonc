@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-haiku-5-5",
+  "enabled_providers": [
+    "anthropic",
+  ],
+  "share": "disabled",
+  "permission": {
+    "*": "ask",
+    "external_directory": "deny",
+    "read": {
+      "*": "allow",
+      "*vault*pass*": "deny"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "bash": {
+      "*": "ask",
+      "pwd": "allow",
+      "ls *": "allow",
+      "tree *": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git branch": "allow",
+      "git branch --list *": "allow",
+      "git branch --show-current": "allow",
+      "git diff *--output*": "ask",
+      "git diff *--ext-diff*": "ask",
+      "git log *--output*": "ask",
+      "git show *--output*": "ask",
+      "cat *vault*pass*": "ask",
+      "head *vault*pass*": "ask",
+      "tail *vault*pass*": "ask",
+      "rm *": "deny",
+      "sudo *": "deny"
+    }
+  }
+}
