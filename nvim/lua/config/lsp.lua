@@ -12,12 +12,6 @@ lsp.servers = {
 	"lua_ls",
 	"marksman",
 	"terraformls",
-	manual_config = function(lspconfig)
-		lspconfig.dartls.setup({
-			autostart = true,
-			cmd = { "dart", "--enable-analytics" },
-		})
-	end,
 }
 
 lsp.linters_by_ft = {

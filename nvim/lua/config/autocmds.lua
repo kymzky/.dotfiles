@@ -18,13 +18,14 @@ api.nvim_create_autocmd({ "BufEnter" }, {
 	end,
 })
 
-api.nvim_create_autocmd({ "BufEnter" }, {
+api.nvim_create_autocmd("FileType", {
 	group = augroup("dart"),
-	pattern = "*.dart",
-	once = true,
-	callback = function()
-		require("lspconfig").dartls.setup({})
-		vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
+	pattern = "dart",
+	callback = function(args)
+		local client = vim.lsp.get_clients({ name = "dartls" })[1]
+		if client and not client.attached_buffers[args.buf] then
+			vim.lsp.buf_attach_client(args.buf, client.id)
+		end
 	end,
 })
 
