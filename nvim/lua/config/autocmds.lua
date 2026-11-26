@@ -64,5 +64,14 @@ api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true
+		vim.opt_local.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = augroup("markdown_colorcolumn"),
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.colorcolumn = "81"
 	end,
 })
