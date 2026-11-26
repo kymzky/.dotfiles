@@ -1,7 +1,7 @@
 local lsp_config = require("config.lsp")
 return {
 	"neovim/nvim-lspconfig",
-	tag = "v2.12.0",
+	tag = "v2.13.0",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
